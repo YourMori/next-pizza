@@ -76,7 +76,7 @@ export default function Home() {
               />
 
               <ProductGroupList
-                title="Завтрак"
+                title="Комбо"
                 categoryId={2}
                 items={[
                   {
