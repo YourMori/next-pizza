@@ -7,6 +7,7 @@ export { Header } from "./header";
 export { ProductCard } from "./product_card";
 export { ProductGroupList } from "./products-group-list";
 export { RangeSlider } from "./range-slider";
+export { SearchInput } from "./search-input";
 export { SortPopup } from "./sort-popup";
 export { Title } from "./title";
 export { TopBar } from "./top-bar";
