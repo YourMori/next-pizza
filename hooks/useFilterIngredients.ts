@@ -1,32 +1,44 @@
 import { Api } from "@/services/api-client";
 import { Ingredient } from "@prisma/client";
 import { useEffect, useState } from "react";
+import { useSet } from "react-use";
 
 interface ReturnProps {
-  ingredient: Ingredient[];
+  ingredients: Ingredient[];
+  loading: boolean;
+  selectedIds: Set<string>;
+  onAddId: (id: string) => void;
 }
 
 export const useFilterIngredients = (): ReturnProps => {
-  const [ingredient, setIngredient] = useState<Ingredient[]>([]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedIds, { toggle }] = useSet(new Set<string>([]));
 
   useEffect(() => {
+    setLoading(true);
     Api.ingredients
       .getAll()
       .then((data) => {
-        setIngredient(data);
+        setIngredients(data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
 
     // async function fetchIngredients() {
     //   try {
+    //     setLoading(true);
     //     const ingredients = await Api.ingredients.getAll();
-    //     setItems(ingredients);
+    //     setIngredients(ingredients);
     //   } catch (error) {
     //     console.log(error);
+    //   } finally {
+    //     setLoading(false);
     //   }
     // }
-    // fetchIngredients();
-  });
 
-  return { ingredient };
+    // fetchIngredients();
+  }, []);
+
+  return { ingredients, loading, onAddId: toggle, selectedIds };
 };
