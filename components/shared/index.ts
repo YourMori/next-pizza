@@ -1,9 +1,13 @@
+export * from "./modals";
 export { Categories } from "./categories";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
+export { ChoosePizzaForm } from "./choose-pizza-form";
+export { ChooseProductForm } from "./choose-product-form";
 export { Container } from "./container";
 export { FilterCheckbox } from "./filter-checkbox";
 export { Filters } from "./filters";
 export { Header } from "./header";
+export { PizzaImage } from "./pizza-image";
 export { ProductCard } from "./product_card";
 export { ProductGroupList } from "./products-group-list";
 export { RangeSlider } from "./range-slider";

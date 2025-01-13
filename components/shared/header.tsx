@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { Container, SearchInput } from ".";
 import { Button } from "../ui";
 
@@ -20,7 +20,9 @@ export const Header: React.FC<Props> = ({ className }) => {
             <Image src="/logo.png" alt="Logo" width={35} height={35} />
             <div>
               <h1 className="text-2xl uppercase font-black">Next Pizza</h1>
-              <p className="text-sm text-gray-400 leading-3">вкусней уже некуда</p>
+              <p className="text-sm text-gray-400 leading-3">
+                вкусней уже некуда
+              </p>
             </div>
           </div>
         </Link>

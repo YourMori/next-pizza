@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { CheckboxFiltersGroup, FilterCheckbox, RangeSlider, Title } from ".";
+import React from "react";
+import { CheckboxFiltersGroup, RangeSlider, Title } from ".";
 import { Input } from "../ui";
-import qs from "qs";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useFilters, useIngredients, useQueryFilters } from "@/hooks";
+import { useRouter } from "next/navigation";
+import { useFilters, useIngredients, useQueryFilters } from "@/shared/hooks";
 
 interface Props {
   className?: string;
